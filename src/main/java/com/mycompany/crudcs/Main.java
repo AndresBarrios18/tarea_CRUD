@@ -24,8 +24,8 @@ public class Main {
         System.out.println("¿Donde deseas guardar los datos? (archivo/base de datos)");
         String eleccionUsuario = scanner.nextLine();
         
-        FileDAO<String> dao = new FileDAO<String>("C:/Users/pipe2/Documents/Tareas/datos.txt"); 
-        DatabaseDAO<String> dao1 = new  DatabaseDAO<String> (); 
+        FileDAO dao = null;
+        DatabaseDAO dao1;
         
         if (eleccionUsuario.equals("archivo")) {
             dao = new FileDAO<String>("C:/Users/pipe2/Documents/Tareas/datos.txt");
@@ -41,7 +41,7 @@ public class Main {
 
         // Llamar al método save de tu DAO
        
-        dao1.create(entity);
+        dao.create(entity);
         
         scanner.close();
     }
